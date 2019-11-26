@@ -107,6 +107,9 @@ public class Window {
 
         // Makes 3D objects render the correct face
         glEnable(GL_DEPTH_TEST);
+
+        // Enable support for 2d textures
+        glEnable(GL_TEXTURE_2D);
     }
 
     public void update() {
@@ -138,6 +141,10 @@ public class Window {
 
     public String getTitle() {
         return this.title;
+    }
+
+    public long getWindow() {
+        return window;
     }
 
     public void setVsync(boolean vSync) {

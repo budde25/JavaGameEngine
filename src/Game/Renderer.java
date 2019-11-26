@@ -3,6 +3,7 @@ package Game;
 import dev.budde.engine.GameItem;
 import dev.budde.engine.Utils;
 import dev.budde.engine.Window;
+import dev.budde.engine.graph.Camera;
 import dev.budde.engine.graph.Mesh;
 import dev.budde.engine.graph.ShaderProgram;
 import dev.budde.engine.graph.Transformation;
@@ -43,7 +44,9 @@ public class Renderer {
                 Z_NEAR, Z_FAR);
 
         shaderProgram.createUniform("projectionMatrix");
-        shaderProgram.createUniform("worldMatrix");
+        shaderProgram.createUniform("modelViewMatrix");
+
+        shaderProgram.createUniform("texture_sampler");
 
         window.setClearColor(1,1,1,1);
     }
@@ -52,28 +55,29 @@ public class Renderer {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     }
 
-    public void render(Window window, GameItem[] gameItems) {
+    public void render(Window window, Camera camera, GameItem[] gameItems) {
         clear();
 
-        if (window.isResized()) {
+        if ( window.isResized() ) {
             glViewport(0, 0, window.getWidth(), window.getHeight());
             window.setResized(false);
         }
 
         shaderProgram.bind();
 
-        // update projection Matrix
+        // Update projection Matrix
         Matrix4f projectionMatrix = transformation.getProjectionMatrix(FOV, window.getWidth(), window.getHeight(), Z_NEAR, Z_FAR);
         shaderProgram.setUniform("projectionMatrix", projectionMatrix);
 
+        // Update view Matrix
+        Matrix4f viewMatrix = transformation.getViewMatrix(camera);
+
+        shaderProgram.setUniform("texture_sampler", 0);
+        // Render each gameItem
         for(GameItem gameItem : gameItems) {
-            // Set world matrix for this item
-            Matrix4f worldMatrix =
-                    transformation.getWorldMatrix(
-                            gameItem.getPosition(),
-                            gameItem.getRotation(),
-                            gameItem.getScale());
-            shaderProgram.setUniform("worldMatrix", worldMatrix);
+            // Set model view matrix for this item
+            Matrix4f modelViewMatrix = transformation.getModelViewMatrix(gameItem, viewMatrix);
+            shaderProgram.setUniform("modelViewMatrix", modelViewMatrix);
             // Render the mes for this game item
             gameItem.getMesh().render();
         }
