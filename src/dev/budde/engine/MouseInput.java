@@ -18,6 +18,7 @@ public class MouseInput {
         previousPos = new Vector2d(-1,-1);
         currentPos = new Vector2d(0,0);
         displVec = new Vector2f();
+        
     }
 
     public void init(Window window) {
@@ -64,4 +65,6 @@ public class MouseInput {
     public boolean isRightButtonPressed() {
         return rightButtonPressed;
     }
+    
+    
 }
