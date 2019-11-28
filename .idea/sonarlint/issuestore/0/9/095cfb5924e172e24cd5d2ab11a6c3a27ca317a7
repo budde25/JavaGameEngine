@@ -1,0 +1,4 @@
+
+‚squid:S1450"_Remove the "projectionMatrix" field and declare it as a local variable in the relevant methods.(­çÂ„ùÿÿÿÿ8â¦ÒÙê-
+rsquid:HiddenFieldCheckF"DRename "projectionMatrix" which hides the field declared at line 25.(»¶‚½úÿÿÿÿ8â¦ÒÙê-
+Wsquid:S1068"4Remove this unused "projectionMatrix" private field.(­çÂ„ùÿÿÿÿ8â¦ÒÙê-

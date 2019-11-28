@@ -1,0 +1,14 @@
+
+esquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(Úˆ 8“ÌîÚê-
+Osquid:S1481",Remove this unused "normals" local variable.(ì—¿•üÿÿÿÿ8ÉÅğÚê-
+Wsquid:S1854"9Remove this useless assignment to local variable "lines".(Œ†”¡8ÉÅğÚê-
+\squid:S1854"9Remove this useless assignment to local variable "faces".(‡ÁÏøÿÿÿÿ8ÉÅğÚê-
+Msquid:S1481"*Remove this unused "faces" local variable.(‡ÁÏøÿÿÿÿ8ÉÅğÚê-
+_squid:S1854"<Remove this useless assignment to local variable "textures".(¹‹ò£ûÿÿÿÿ8ÉÅğÚê-
+Hsquid:S1481"*Remove this unused "lines" local variable.(Œ†”¡8ÉÅğÚê-
+Psquid:S1481"-Remove this unused "textures" local variable.(¹‹ò£ûÿÿÿÿ8ÉÅğÚê-
+^squid:S1854";Remove this useless assignment to local variable "normals".(ì—¿•üÿÿÿÿ8ÉÅğÚê-
+_squid:S1854"<Remove this useless assignment to local variable "vertices".(­­·üÿÿÿÿ8ÉÅğÚê-
+Psquid:S1481"-Remove this unused "vertices" local variable.(­­·üÿÿÿÿ8ÉÅğÚê-
+Xsquid:S1118
+":Add a private constructor to hide the implicit public one.(‹–ã¢8“ÌîÚê-

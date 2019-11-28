@@ -1,7 +1,5 @@
 package dev.budde.engine;
 
-import Game.TestGame;
-
 public class GameEngine implements Runnable {
 
     private final Thread gameLoopThread;

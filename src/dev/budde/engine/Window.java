@@ -110,6 +110,9 @@ public class Window {
 
         // Enable support for 2d textures
         glEnable(GL_TEXTURE_2D);
+
+        // poly mode
+        //glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
     }
 
     public void update() {
